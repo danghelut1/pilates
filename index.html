@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Élevé Pilates | studio</title>
+  <!-- modern calm fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300..700;1,14..32,300..500&display=swap" rel="stylesheet">
+  <!-- font awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- elegant, soft, body-positive design -->
+  <style>
+    /* ---------- ROOT VARIABLES: premium neutrals with soft sage & dusty rose accents ---------- */
+    :root {
+      --cream: #faf7f2;        /* background warmth */
+      --soft-sage: #dde6dd;    /* light sage, calm */
+      --sage: #b3c4b3;         /* medium sage – premium */
+      --dusty-rose: #e2cfc4;   /* soft blush, body-positive warmth */
+      --charcoal: #3c3a36;     /* soft black for text */
+      --warm-gray: #6b6a66;    /* secondary text */
+      --white: #ffffff;
+      --shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+      --border-radius-card: 24px;
+      --border-radius-btn: 40px;
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--cream);
+      color: var(--charcoal);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 400;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      font-weight: 300;
+      margin-bottom: 0.5rem;
+      color: var(--charcoal);
+    }
+
+    .section-subhead {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--warm-gray);
+      max-width: 600px;
+      margin: 0 auto 2.5rem auto;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ---------- BUTTONS & CTA ---------- */
+    .btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      border-radius: var(--border-radius-btn);
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      background: transparent;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-primary {
+      background-color: var(--charcoal);
+      color: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .btn-primary:hover {
+      background-color: #252320;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--charcoal);
+      color: var(--charcoal);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--charcoal);
+      color: white;
+    }
+
+    /* ---------- HEADER / NAVIGATION ---------- */
+    header {
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(6px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(179, 196, 179, 0.2);
+    }
+
+    .logo {
+      font-size: 1.6rem;
+      font-weight: 350;
+      letter-spacing: -0.02em;
+      color: var(--charcoal);
+    }
+    .logo span {
+      font-weight: 250;
+      color: var(--sage);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      align-items: center;
+    }
+    .nav-links a {
+      color: var(--charcoal);
+      font-weight: 400;
+      font-size: 0.98rem;
+      letter-spacing: 0.3px;
+    }
+    .nav-links a:hover {
+      color: #8b7e72;
+    }
+    .nav-book {
+      background-color: var(--charcoal);
+      color: white !important;
+      padding: 0.5rem 1.4rem;
+      border-radius: 40px;
+      font-weight: 500;
+    }
+    .nav-book:hover {
+      background-color: #5a534b;
+      color: white;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .hero-content {
+      flex: 1.1;
+      padding-right: 3rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3.5rem;
+      font-weight: 300;
+      line-height: 1.1;
+      margin-bottom: 1.2rem;
+      color: #2e2b27;
+    }
+    .hero-content h1 i {
+      color: var(--dusty-rose);
+      font-style: normal;
+      font-weight: 350;
+    }
+
+    .hero-sub {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--warm-gray);
+      margin-bottom: 2rem;
+      max-width: 550px;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 1.2rem;
+      align-items: center;
+    }
+
+    .hero-image {
+      flex: 0.9;
+      background: linear-gradient(145deg, var(--soft-sage) 0%, #eae3db 100%);
+      border-radius: 240px 240px 120px 120px;
+      padding: 2rem 1.5rem;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image svg {
+      width: 80%;
+      opacity: 0.75;
+    }
+
+    /* body-positive message banner */
+    .body-positive-tag {
+      margin-top: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      color: #5f5b55;
+      font-size: 0.95rem;
+      font-weight: 350;
+      border-top: 1px solid var(--sage);
+      padding-top: 1.8rem;
+    }
+    .body-positive-tag i {
+      color: var(--dusty-rose);
+      font-size: 1.4rem;
+    }
+
+    /* ---------- CLASS CARDS (MAT, REFORMER, PRENATAL) ---------- */
+    .section {
+      padding: 5rem 0;
+    }
+    .section-light {
+      background-color: white;
+    }
+    .class-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .class-card {
+      background: var(--white);
+      padding: 2rem 1.8rem;
+      border-radius: var(--border-radius-card);
+      box-shadow: var(--shadow);
+      transition: all 0.2s;
+      border: 1px solid rgba(179, 196, 179, 0.2);
+    }
+    .class-card:hover {
+      transform: translateY(-6px);
+    }
+    .class-icon {
+      font-size: 2.2rem;
+      color: var(--sage);
+      margin-bottom: 1.2rem;
+    }
+    .class-card h3 {
+      font-size: 1.5rem;
+      font-weight: 400;
+      margin-bottom: 0.5rem;
+    }
+    .class-card p {
+      color: var(--warm-gray);
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .class-link {
+      font-weight: 500;
+      color: var(--charcoal);
+      border-bottom: 1.5px solid var(--dusty-rose);
+      padding-bottom: 2px;
+    }
+
+    /* ---------- INSTRUCTORS ---------- */
+    .instructor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2.5rem;
+      margin-top: 2rem;
+    }
+    .instructor-card {
+      text-align: center;
+    }
+    .instructor-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      margin: 0 auto 1.2rem;
+      background: var(--soft-sage);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .instructor-img svg {
+      width: 80%;
+      height: 80%;
+      opacity: 0.7;
+    }
+    .instructor-card h4 {
+      font-size: 1.4rem;
+      font-weight: 380;
+      margin-bottom: 0.2rem;
+    }
+    .instructor-title {
+      color: var(--dusty-rose);
+      font-weight: 450;
+      margin-bottom: 0.6rem;
+      font-size: 0.95rem;
+      letter-spacing: 0.5px;
+    }
+    .instructor-bio {
+      color: var(--warm-gray);
+      font-weight: 300;
+      font-size: 0.95rem;
+      max-width: 280px;
+      margin: 0 auto;
+    }
+
+    /* ---------- TESTIMONIALS ---------- */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 1rem;
+    }
+    .testimonial {
+      background: var(--cream);
+      padding: 2rem 2rem 1.8rem;
+      border-radius: 32px;
+      border: 1px solid rgba(179, 196, 179, 0.3);
+    }
+    .testimonial i {
+      color: var(--dusty-rose);
+      font-size: 1.6rem;
+      opacity: 0.7;
+      margin-bottom: 0.8rem;
+    }
+    .testimonial p {
+      font-size: 1.05rem;
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+      color: #3e3c39;
+    }
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .client span {
+      font-weight: 500;
+      color: var(--charcoal);
+    }
+
+    /* ---------- SCHEDULE OVERVIEW ---------- */
+    .schedule-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      justify-content: center;
+      background: white;
+      padding: 2rem 1.5rem;
+      border-radius: 40px;
+      box-shadow: var(--shadow);
+      margin-top: 1.8rem;
+    }
+    .day-slot {
+      flex: 1 0 150px;
+      text-align: center;
+    }
+    .day-name {
+      font-weight: 500;
+      color: var(--charcoal);
+      border-bottom: 1px solid var(--dusty-rose);
+      padding-bottom: 0.4rem;
+      margin-bottom: 0.8rem;
+    }
+    .class-time {
+      font-size: 0.9rem;
+      color: var(--warm-gray);
+      margin-bottom: 0.3rem;
+    }
+    .class-type-badge {
+      display: inline-block;
+      background: var(--soft-sage);
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      color: #3a4e3a;
+      margin-top: 0.2rem;
+    }
+
+    /* ---------- PRICING / PACKAGES ---------- */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2rem;
+      align-items: stretch;
+      margin-top: 2rem;
+    }
+    .pricing-card {
+      background: white;
+      border-radius: 32px;
+      padding: 2rem 1.8rem;
+      box-shadow: var(--shadow);
+      border: 1px solid #f0ebe6;
+      transition: 0.2s;
+    }
+    .pricing-card.popular {
+      background: var(--charcoal);
+      color: white;
+    }
+    .pricing-card.popular .price, 
+    .pricing-card.popular .pricing-feature {
+      color: white;
+    }
+    .pricing-card.popular .btn-outline {
+      border-color: white;
+      color: white;
+    }
+    .pricing-card.popular .btn-outline:hover {
+      background: white;
+      color: var(--charcoal);
+    }
+    .price {
+      font-size: 2.5rem;
+      font-weight: 270;
+      margin: 0.8rem 0 1rem;
+      color: var(--charcoal);
+    }
+    .price small {
+      font-size: 1rem;
+      font-weight: 300;
+    }
+    .pricing-feature {
+      list-style: none;
+      margin: 1.8rem 0;
+      color: var(--warm-gray);
+    }
+    .pricing-feature li {
+      padding: 0.3rem 0;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+    .pricing-feature i {
+      color: var(--sage);
+      font-size: 0.9rem;
+    }
+
+    /* ---------- CONTACT & MAP (REVISED) ---------- */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-info {
+      background: white;
+      padding: 2rem 2.2rem;
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+    }
+    .contact-detail {
+      display: flex;
+      gap: 1rem;
+      margin: 1.5rem 0;
+      align-items: center;
+    }
+    .contact-detail i {
+      font-size: 1.4rem;
+      color: var(--sage);
+      width: 32px;
+      text-align: center;
+    }
+    .map-placeholder {
+      background: #e3dfda;
+      border-radius: 28px;
+      height: 320px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-weight: 300;
+      border: 0;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .map-placeholder iframe {
+      border-radius: 28px;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* ---------- FOOTER (REVISED – premium & connected) ---------- */
+    footer {
+      background: white;
+      padding: 3rem 0 2.5rem;
+      color: var(--warm-gray);
+      font-weight: 300;
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(179,196,179,0.3);
+      margin-top: 2rem;
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .footer-logo {
+      font-size: 1.4rem;
+      font-weight: 350;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+    }
+    .footer-logo span {
+      color: var(--sage);
+    }
+    .social-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .social-links a {
+      color: var(--warm-gray);
+      font-size: 1.3rem;
+      transition: color 0.2s;
+    }
+    .social-links a:hover {
+      color: var(--dusty-rose);
+    }
+    .footer-copyright {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .footer-copyright span {
+      color: var(--sage);
+    }
+    .footer-copyright i {
+      color: var(--dusty-rose);
+    }
+
+    /* responsiveness */
+    @media (max-width: 900px) {
+      .hero { flex-direction: column; text-align: center; padding: 2rem 1rem; }
+      .hero-content { padding-right: 0; margin-bottom: 2rem; }
+      .hero-cta { justify-content: center; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      header { flex-wrap: wrap; }
+    }
+    @media (max-width: 700px) {
+      .nav-links { display: none; }
+      .logo { margin-right: auto; }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER – premium minimalist navigation -->
+  <header>
+    <div class="logo">ÉLEVÉ<span> pilates</span></div>
+    <div class="nav-links">
+      <a href="#">Classes</a>
+      <a href="#">Instructors</a>
+      <a href="#">Schedule</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+      <a href="#" class="nav-book">Book now</a>
+    </div>
+    <!-- mobile menu icon (elegant) -->
+    <i class="fas fa-ellipsis-h" style="font-size: 1.4rem; color: var(--charcoal); display: none;"></i>
+  </header>
+
+  <!-- HERO section with strong CTA & body-positive message -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>move with <i>ease</i>,<br>live with strength.</h1>
+      <div class="hero-sub">Personalized Pilates for every body. Mat, reformer, and prenatal — all levels welcome.</div>
+      <div class="hero-cta">
+        <a href="#" class="btn btn-primary">Book a free trial</a>
+        <a href="#" class="btn btn-outline">Explore classes</a>
+      </div>
+      <!-- body-positive note -->
+      <div class="body-positive-tag">
+        <i class="fas fa-heart"></i>
+        <span>All bodies, all abilities, all welcome here.</span>
+      </div>
+    </div>
+    <div class="hero-image">
+      <!-- abstract, calm illustration – body positive silhouette -->
+      <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="100" cy="80" r="38" fill="#E2CFC4" opacity="0.8" />
+        <path d="M62 140 L70 118 L130 118 L138 140 L110 190 L90 190 Z" fill="#b3c4b3" opacity="0.7"/>
+        <ellipse cx="100" cy="120" rx="40" ry="24" fill="#dde6dd" opacity="0.6"/>
+        <circle cx="80" cy="70" r="4" fill="#3c3a36" />
+        <circle cx="120" cy="70" r="4" fill="#3c3a36" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- CLASS TYPES: mat, reformer, prenatal -->
+  <div class="section" style="background-color: white;">
+    <div class="container">
+      <h2 style="text-align: center;">classes designed for you</h2>
+      <div style="text-align: center;" class="section-subhead">low impact, high awareness – find your practice</div>
+      <div class="class-grid">
+        <div class="class-card">
+          <div class="class-icon"><i class="fas fa-leaf"></i></div>
+          <h3>Mat Pilates</h3>
+          <p>Classic core. Build endurance and flexibility using your own body weight. All levels.</p>
+          <a href="#" class="class-link">learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="class-card">
+          <div class="class-icon"><i class="fas fa-couch"></i></div>
+          <h3>Reformer</h3>
+          <p>Low‑resistance, high‑precision. Spring‑loaded movement for alignment and grace.</p>
+          <a href="#" class="class-link">learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="class-card">
+          <div class="class-icon"><i class="fas fa-fan"></i></div>
+          <h3>Prenatal</h3>
+          <p>Supportive, gentle practice for pregnancy. Strengthen pelvic floor & connect.</p>
+          <a href="#" class="class-link">learn more <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- INSTRUCTOR BIOS (diverse, body-positive) -->
+  <div class="section" style="background: var(--cream);">
+    <div class="container">
+      <h2 style="text-align: center;">meet your guides</h2>
+      <div style="text-align: center;" class="section-subhead">experienced instructors who celebrate all bodies</div>
+      <div class="instructor-grid">
+        <div class="instructor-card">
+          <div class="instructor-img">
+            <svg viewBox="0 0 100 100" fill="none">
+              <circle cx="50" cy="50" r="40" fill="#d4b2a7" opacity="0.4" />
+              <circle cx="50" cy="40" r="14" fill="#b3c4b3" opacity="0.5" />
+              <path d="M35 70 Q50 90, 65 70" stroke="#3c3a36" stroke-width="2" fill="none"/>
+            </svg>
+          </div>
+          <h4>Elena Rios</h4>
+          <div class="instructor-title">Pilates & somatic movement</div>
+          <p class="instructor-bio">Elena focuses on mindful alignment. 12+ years teaching bodies of all shapes, sizes, and histories.</p>
+        </div>
+        <div class="instructor-card">
+          <div class="instructor-img">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="45" r="22" fill="#dde6dd" opacity="0.7" />
+              <rect x="35" y="70" width="30" height="20" rx="10" fill="#b3c4b3" opacity="0.6" />
+              <circle cx="38" cy="42" r="3" fill="#2e2b27"/>
+              <circle cx="62" cy="42" r="3" fill="#2e2b27"/>
+            </svg>
+          </div>
+          <h4>Marcus Chen</h4>
+          <div class="instructor-title">Reformer specialist</div>
+          <p class="instructor-bio">Marcus combines biomechanics and empathy. He believes strength is for everyone, at any stage.</p>
+        </div>
+        <div class="instructor-card">
+          <div class="instructor-img">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="48" r="24" fill="#e2cfc4" opacity="0.6" />
+              <ellipse cx="50" cy="85" rx="20" ry="15" fill="#b3c4b3" opacity="0.5"/>
+              <circle cx="38" cy="44" r="3" fill="#2e2b27"/>
+              <circle cx="62" cy="44" r="3" fill="#2e2b27"/>
+            </svg>
+          </div>
+          <h4>Priya Kapoor</h4>
+          <div class="instructor-title">Prenatal & postpartum</div>
+          <p class="instructor-bio">Priya creates nurturing spaces for birthing people. Certified in prenatal Pilates and body neutrality.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TESTIMONIALS – real stories -->
+  <div class="section" style="background: white;">
+    <div class="container">
+      <h2 style="text-align: center;">what our community says</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial">
+          <i class="fas fa-quote-right"></i>
+          <p>I never thought Pilates was 'for me' — but Élevé changed that. My body feels stronger and more capable at 52.</p>
+          <div class="client"><span>— Diane, 3 years</span></div>
+        </div>
+        <div class="testimonial">
+          <i class="fas fa-quote-right"></i>
+          <p>The prenatal classes kept me connected to my body during pregnancy. Instructors are so attuned to modifications.</p>
+          <div class="client"><span>— Sam, prenatal client</span></div>
+        </div>
+        <div class="testimonial">
+          <i class="fas fa-quote-right"></i>
+          <p>Reformer here is pure joy. I love that there's no judgment, just encouragement. My back pain is gone.</p>
+          <div class="client"><span>— Jordan, reformer</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WEEKLY SCHEDULE OVERVIEW -->
+  <div class="section" style="background: var(--cream);">
+    <div class="container">
+      <h2 style="text-align: center;">weekly rhythm</h2>
+      <div style="text-align: center;" class="section-subhead">drop in or book your regular mat, reformer & prenatal</div>
+      <div class="schedule-cards">
+        <div class="day-slot">
+          <div class="day-name">MON</div>
+          <div class="class-time">9:30 Mat</div>
+          <div class="class-time">11:00 Reformer</div>
+          <div class="class-time">17:30 Prenatal</div>
+          <span class="class-type-badge">all levels</span>
+        </div>
+        <div class="day-slot">
+          <div class="day-name">WED</div>
+          <div class="class-time">9:30 Reformer</div>
+          <div class="class-time">12:00 Mat</div>
+          <div class="class-time">16:00 Prenatal</div>
+          <span class="class-type-badge">mixed</span>
+        </div>
+        <div class="day-slot">
+          <div class="day-name">FRI</div>
+          <div class="class-time">10:00 Mat</div>
+          <div class="class-time">11:30 Reformer</div>
+          <div class="class-time">16:30 Prenatal</div>
+          <span class="class-type-badge">intro</span>
+        </div>
+        <div class="day-slot">
+          <div class="day-name">SAT</div>
+          <div class="class-time">9:00 Mat</div>
+          <div class="class-time">10:30 Reformer</div>
+          <div class="class-time">—</div>
+          <span class="class-type-badge">weekend</span>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 2rem;"><a href="#" style="border-bottom: 1px solid var(--dusty-rose); padding-bottom: 2px; color: var(--charcoal);">view full schedule →</a></p>
+    </div>
+  </div>
+
+  <!-- PRICING / PACKAGES – transparent, welcoming -->
+  <div class="section" style="background: white;">
+    <div class="container">
+      <h2 style="text-align: center;">invest in your practice</h2>
+      <div style="text-align: center;" class="section-subhead">simple, flexible packages — no hidden fees</div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3 style="font-weight: 350;">single class</h3>
+          <div class="price">$28 <small>/ drop-in</small></div>
+          <ul class="pricing-feature">
+            <li><i class="fas fa-check"></i> any mat or reformer</li>
+            <li><i class="fas fa-check"></i> 60 min session</li>
+            <li><i class="fas fa-check"></i> rental included</li>
+            <li><i class="fas fa-check"></i> valid 30 days</li>
+          </ul>
+          <a href="#" class="btn btn-outline" style="width: 100%; text-align: center;">book single</a>
+        </div>
+        <div class="pricing-card popular">
+          <h3 style="font-weight: 350;">5‑class pack</h3>
+          <div class="price">$125 <small>$25/class</small></div>
+          <ul class="pricing-feature" style="color: rgba(255,255,255,0.9);">
+            <li><i class="fas fa-check" style="color: #d4b2a7;"></i> all class types</li>
+            <li><i class="fas fa-check" style="color: #d4b2a7;"></i> share with a friend</li>
+            <li><i class="fas fa-check" style="color: #d4b2a7;"></i> 3 month validity</li>
+            <li><i class="fas fa-check" style="color: #d4b2a7;"></i> save 10%</li>
+          </ul>
+          <a href="#" class="btn btn-outline" style="width: 100%; text-align: center; border-color: white; color: white;">buy pack</a>
+        </div>
+        <div class="pricing-card">
+          <h3 style="font-weight: 350;">monthly unlimited</h3>
+          <div class="price">$189 <small>/ mo</small></div>
+          <ul class="pricing-feature">
+            <li><i class="fas fa-check"></i> unlimited mat & reformer</li>
+            <li><i class="fas fa-check"></i> 2 prenatal classes</li>
+            <li><i class="fas fa-check"></i> guest pass</li>
+            <li><i class="fas fa-check"></i> pause anytime</li>
+          </ul>
+          <a href="#" class="btn btn-outline" style="width: 100%; text-align: center;">join unlimited</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== REVISED CONTACT SECTION – icon fixed, map accessible ========== -->
+  <div class="section" style="background: var(--cream); padding-bottom: 4rem;">
+    <div class="container">
+      <h2 style="text-align: center;">visit our studio</h2>
+      <div style="text-align: center;" class="section-subhead">calm space in the heart of the city</div>
+      <div class="contact-grid">
+        <!-- contact details card -->
+        <div class="contact-info">
+          <div style="display: flex; flex-direction: column;">
+            <div class="contact-detail">
+              <i class="fas fa-map-pin"></i>
+              <span>224 Bryant Street, Palo Alto, CA 94301</span>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-phone-alt"></i>
+              <span>(650) 555-0174</span>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-envelope"></i>
+              <span>hello@elevépilates.com</span>
+            </div>
+            <div class="contact-detail">
+              <!-- FIXED: proper closing </i> tag, now clock icon displays -->
+              <i class="fas fa-clock"></i>
+              <span>Mon–Fri 8am–7pm, Sat 9am–2pm</span>
+            </div>
+          </div>
+          <p style="margin-top: 2rem; font-weight: 350; border-top: 1px solid var(--soft-sage); padding-top: 1.5rem;">
+            <i class="fas fa-bicycle" style="color: var(--sage);"></i> Free street parking and bike racks. Enter through the courtyard.
+          </p>
+        </div>
+        <!-- embedded map with title for accessibility -->
+        <div class="map-placeholder">
+          <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-122.1631%2C37.4447%2C-122.1591%2C37.4467&amp;layer=mapnik&amp;marker=37.4457%2C-122.1611" 
+                  title="Map showing Élevé Pilates studio location" 
+                  style="border:0; width:100%; height:100%;" 
+                  allowfullscreen="" 
+                  loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== REVISED FOOTER – calm, connected, premium ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">ÉLEVÉ<span> pilates</span></div>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+        </div>
+        <div class="footer-copyright">
+          <span>© 2025 ÉLEVÉ pilates</span>
+          <span>·</span>
+          <span><i class="fas fa-heart" style="color: var(--dusty-rose);"></i> every body belongs</span>
+          <span>·</span>
+          <span>made with calm</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
